@@ -1,0 +1,26 @@
+<view class="page">
+  <button bindtap="openPopup">打开表单弹层</button>
+  <!-- 弹层出现时背景 -->
+  <view wx:if="{{ show }}" class="backup" bindtap="closePopup"></view>
+  <!-- 弹层中的内容 -->
+  <view class="wall" wx:if="{{ show }}" style="opacity:0;">
+    <form action="" catchsubmit="submit">
+      <view class="item">
+        <view>姓名：</view>
+        <input type="text" placeholder="请输入姓名" name="name" value="{{ name }}"/>
+      </view>
+      <view>
+        <view>介绍：</view>
+        <textarea name="introduce" id="" placeholder="请输入详细介绍" class="textarea" placeholder-class="placeholder-textarea"
+          maxlength="{{ textareaMaxLength }}" catchinput="textareaInput">
+          <text class="currentLength">{{ currentLength }}/{{ textareaMaxLength }}</text>
+        </textarea>
+      </view>
+      <view class="choose">
+        <button wx:if="{{ !img }}" catchtap="chooseImg">点击上传图片</button>
+        <image wx:else src="{{ img }}" class="img"></image>
+      </view>
+      <button form-type="submit" class="submit">提交</button>
+    </form>
+  </view>
+</view>

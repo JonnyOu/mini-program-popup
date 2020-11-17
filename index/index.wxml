@@ -1,0 +1,8 @@
+<popup bindItemChange="handeItemChange" key="{{ value }}"></popup>
+ 
+<view wx:if="{{ name }}" class="get-data">
+  <view>从自定义组件中获取的内容</view>
+  <view>姓名: {{ name }}</view>
+  <view>描述: {{ introduce }}</view>
+  <image src="{{ img }}"></image>
+</view> 
